@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechRise: Building Hope, Breaking Barriers</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --themeRed:#e43a47;
+    --gray:#efefef;
+}
+html{
+    scroll-behavior: smooth;
+}
+button,
+body{
+    font-family:"Poppins",sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+p{
+    font-size: 14px;
+    line-height: 26px;
+}
+.fullContainer{
+    width: 100%;
+}
+.container{
+    width:1440px;
+    margin:auto;
+}
+.sectionTitle{
+    width: 300px;
+    border-bottom: 3px solid var(--themeRed);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0 auto 50px;
+    position: relative;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+.sectionTitle::after{
+    display: inline-block;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: var(--themeRed);
+    position:absolute;
+    left: calc(50%-10px);
+    top: calc(75%-7px);
+    transform: rotate(45deg) translate(50%,50%);
+    border: 3px solid #fff
+}
+section{
+    padding: 100px 0;
+    position: relative;
+}
+header{
+    width:100%;
+    background-color:rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 2;
+} 
+header .container{
+    display: flex;
+    justify-content:space-between;
+}
+
+header .container .logo
+{
+    padding:15px 0;
+    height: 75px;
+}
+header .container .logo img{
+    height:100%;
+}
+header nav ul{
+    list-style-type:none;
+}
+
+header nav ul li{
+    display:inline-block;
+}
+
+header nav ul li a{
+    display :inline-block;
+    height: 75px;
+    line-height: 75px;
+    padding:0 15px;
+    text-decoration:none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color:#fff;
+    transition:0.3s;
+}
+
+header nav ul li a:hover{
+    background-color:var(--themeRed);
+}
+.banner{
+    min-height:100vh;
+    width:100%;
+    background-image: url("https://static.theprint.in/wp-content/uploads/2023/07/poverty.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.banner h1{
+    margin-top: 230px;
+    display: inline-block;
+    font-size: 3.5rem;
+    color:#fff;
+    text-shadow: 0 0 2px #000;
+    width: 50%;
+    line-height: 4.2rem;
+    font-weight: 100;
+}
+
+.banner h1 span{
+    background-color: var(--themeRed);
+    display:inline-block;
+    line-height: 3.5rem;
+    padding:0 15px;
+font-weight: 600;
+border-radius: 5px;
+}
+
+.banner p {
+    color: #f8f6f7;
+    width:50%;
+    text-shadow: 0 0 2px #f4eeee;
+    margin-top: 10px;
+    font-size: larger;
+}
+.banner  ul{
+    color: #f8f6f7;
+    width:50%;
+    text-shadow: 0 0 2px #f4eeee;
+    margin-top: 10px;
+    font-size: larger;
+}
+
+.banner button{
+    background-color: var(--themeRed);
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top:20px;
+    font-size:13px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+#aboutSection .cards {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-top: 50px;
+    position: relative;
+    height: 245px;
+}
+
+#aboutSection .cards > div {
+    width: 400px;
+    background-color: var(--gray);
+    padding: 35px;
+    color:#444;
+    text-align: center;
+    border-radius: 5px;
+    height:250px;
+    border:1px solid #f30b0b;
+    transition: 0.4s;
+}
+#aboutSection .cards > div:hover {
+    width:400px;
+    margin-top: -20px;
+    border-color: var(--themeRed);
+    padding: 55px;
+    height: auto;
+}
+#aboutSection .cards > div .title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#aboutSection .cards > div p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#aboutSection .cards > div button {  
+    border: 1px solid var(--themeRed);
+    outline:none;
+    padding: 7px 15px;
+    margin-top:15px;
+    font-size: 12px;
+    border: 3px;
+    border-color: var(--themeRed);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#aboutSection .cards > div:hover button {
+    background-color: var(--themeRed);
+    color: #fff;
+}
+
+.programs{
+    background-color: #e2e2e2;
+}
+
+.programs .boxContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:50px;
+}
+
+.programs .boxContainer .box{
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 #c5c5c5;
+    position:relative;
+    margin-bottom:15px;
+
+}
+
+.programs .boxContainer .box .cardImage{
+    width:100%;
+    height:300px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+.programs .boxContainer .box .cardImage:after{
+    width:100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    content:"";
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    filter:grayscale(100%);
+    transition:0.4s
+}
+
+.programs .boxContainer .box:nth-child(1) .cardImage,
+.programs .boxContainer .box:nth-child(1) .cardImage:after{
+    background-image:url("https://i.pinimg.com/736x/e1/c2/0b/e1c20bb7e0738f30cd88ba0fa13885c6.jpg") ;
+}
+.programs .boxContainer .box:nth-child(2) .cardImage,
+programs .boxContainer .box:nth-child(2) .cardImage:after{
+    background-image:url("https://vajiram-prod.s3.ap-south-1.amazonaws.com/Issues_relating_to_poverty_208_197c5c16ce.jpg") ;
+}
+.programs .boxContainer .box:nth-child(3) .cardImage,
+programs .boxContainer .box:nth-child(3) .cardImage:after{
+    background-image:url("data:image/jpeg;base64,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") ;
+}
+.programs .boxContainer .box:nth-child(4) .cardImage,
+programs .boxContainer .box:nth-child(4) .cardImage:after{
+    background-image:url("https://us.123rf.com/450wm/tommaso79/tommaso792006/tommaso79200600033/149366299-jobless-worker-after-job-loss-begging-in-the-city-street.jpg?ver=6") ;
+}
+
+.programs .boxContainer .box:hover .cardImage:after{
+    top:100%;
+}
+.programs .boxContainer .box .programTitle {
+    font-size:16px;
+    margin-top: 15px;
+    font-weight:600;
+    color: #444;
+     text-decoration: none;
+    cursor: pointer; 
+}
+.programs .boxContainer .box .donationCount{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #444;
+}
+.programs .boxContainer .box .donationCount span{
+    color: var(--themeRed);
+}
+
+.programs .boxContainer .box button{
+    position: absolute;
+    left: 50%;
+    background-color: var(--themeRed);
+    color: #fff;
+    transform: translate(-50%);
+    bottom:-15px;
+    border-radius: 60px;
+    padding: 7px 15px;
+    border:0;
+    outline: none;
+    cursor: pointer;
+
+}
+.reference{
+    background-color: #e2e2e2;
+}
+
+.reference .boxContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+}
+
+.reference .boxContainer .box{
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 #c5c5c5;
+    position:relative;
+    margin-bottom:15px;
+
+}
+
+.reference .boxContainer .box .cardImage{
+    width:100%;
+    height:400px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+    font-size: 9px;
+}
+.reference .boxContainer .box:hover .cardImage:after{
+    top:100%;
+}
+.reference .boxContainer .box .programTitle {
+    font-size:16px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #ed4a4a;
+}
+@media screen and (max-width:1140px)
+{
+    .container{
+        width:100%;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width:1000px)
+{
+    .banner h1{
+        margin-top: 200px;  
+    }
+    #aboutSection .cards{
+        justify-content: space-around;
+        height: auto;
+    }
+    #aboutSection .cards > div{
+        margin: 10px 0;
+    }
+}
+@media screen and (max-width:1024px)
+{
+    .banner{
+        background-position-x:45% ;
+    }
+    .banner h1{
+        font-size: 2.5rem;
+}
+.programs .boxContainer{
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+@media screen and (max-width:768px){
+header nav{
+    position: relative;
+    border: 2px solid #fff;
+    height:30px;
+    width: 30px;
+    margin-top:20px;
+    border-radius: 5px;
+}
+header nav:after{
+ top:17px;
+}
+header nav:before{
+    top:7px;
+}
+header nav:after,
+header nav:before{
+    content: "";
+    height:2px;
+    width:17px;
+    background-color: #fff;
+    display: block;
+    position:absolute;
+    left:5px;
+
+}
+header nav ul{
+    position: absolute;
+    right: -400px;
+    top:53px;
+    transition: 0.5s;
+}
+
+header nav:hover ul{
+    right: 0;
+}
+
+header nav ul li{
+    display: block;
+}
+header nav ul li a{
+    width: 300px;
+    background-color: rgba(0,0,0,0.6);
+}
+.banner{
+    background-position-x: 65%;
+}
+.banner p{
+    font-size:14px;
+}
+.banner p,
+.banner h1{
+    width: 70%;
+}
+
+#aboutSection .cards > div:hover{
+    width:350px;
+}
+.gallery .galleryContainer{
+    column-count: 2;
+
+}
+}
+
+@media screen and (max-width:425px){
+    .banner h1{
+        margin-top: 150px;
+        font-size: 2rem;
+        line-height:3rem;
+    }
+    .banner button{
+        margin-bottom: 10px;
+    }
+    #aboutSection p{
+        text-align: justify;
+    }
+
+    #aboutSection .cards > div:hover{
+        width:400px;
+        margin-top: 10px;
+        padding: 35px;
+    }
+    .programs .boxContainer{
+        grid-template-columns: 1fr;
+    }
+    .gallery .galleryContainer{
+        column-count: 1;
+
+    }
+    footer .container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (max-width:320px){
+    .banner h1{
+        margin-top: 100px;
+    }
+}
+/* gallery start */
+
+.gallery .galleryContainer{
+    column-count: 4;
+    column-gap: 20px;
+
+}
+
+.gallery .galleryContainer .item{
+    position: relative;
+    margin-bottom : 20px;
+    overflow: hidden;
+}
+
+.gallery .galleryContainer img{
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.gallery .galleryContainer .title{
+    position: absolute;
+    background-color: var(--gray);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.gallery .galleryContainer .item:hover .title{
+    opacity: 1;
+
+}
+
+.gallery .galleryContainer .item:hover img{
+    transform: scale(1.2);
+} 
+
+/* gallery end */
+
+/* Join start */
+
+.join {
+    background-color: coral;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Change to column layout for vertical alignment */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center align text */
+    padding-bottom: 20px;
+}
+
+.join .joinTitle {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.join .joinTitle span {
+    font-weight: 800;
+}
+.join button{
+    padding: 7px 15px;
+    margin-top: 20px;
+    border: 0;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+.join button.joinNow {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add margin to the bottom to create space */
+    background-color: #424242;
+    color: #fff;
+}
+
+.join .container img {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+footer .container .logo {
+    padding: 5px 0;
+    height: 10px;
+}
+
+
+/* Join end */
+
+/* footer start */
+
+footer {
+    background-color: #181818;
+    color: #f7f7f7;
+    padding: 50px 0;
+    font-size: 14px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+    margin-bottom: 30px;
+    padding: 0 0 5px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .linksContainer ul {
+    list-style-type: none;
+}
+
+footer .linksContainer ul li a {
+    text-decoration: none;
+    color: #f7f7f7;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Add styling for other elements within the footer as needed */
+
+</style>
+<body>
+    <div class="fullcontainer banner" id="homeSection">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#homeSection">Home</a></li>
+                    <li><a href="#aboutSection">About</a></li>
+                    <li><a href="#programSection">Programs</a></li>
+                    <li><a href="#referenceSection">References</a></li>
+                    <li><a href="#gallerySection">Gallery</a></li>
+                    <li><a href="#joinSection">Join</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+<h1>TechRise<span> Building Hope, Breaking Barriers</span> </h1>
+<p><b>
+    TechRise is proud to embrace a dynamic student community eager to harness the power of artificial intelligence for poverty alleviation. Our organization encourages these aspiring innovators to channel their passion and creativity towards meaningful change. By joining the TechRise family, students have the opportunity to develop AI-driven solutions aimed at addressing critical issues like food insecurity, education accessibility, and job opportunities for underserved populations. Through mentorship, resources, and collaboration, we enable these young minds to make a lasting impact. TechRise understands that the fight against poverty requires a multifaceted approach, and we are committed to supporting the next generation of change-makers as they break barriers and build hope for a brighter future.
+</p>
+<p>
+<b>POVERTY:</b>
+Poverty is a complex and multidimensional condition characterized by a lack of resources, both material and non-material, needed to meet basic human needs for a minimum standard of living. This includes insufficient income, lack of access to education and healthcare, limited opportunities for economic and social participation, and often living in conditions of poor housing and inadequate sanitation.
+</p>
+<P>
+The effects of poverty are far-reaching and impact various aspects of individuals' lives. Here are some ways in which poverty affects people:
+<ul>
+<li>Limited Access to Education: Poverty often restricts access to quality education. Children from impoverished families may face barriers such as lack of school fees, uniforms, and necessary supplies. Limited educational opportunities can perpetuate the cycle of poverty across generations.</li>
+<li>Poor Health Outcomes: Individuals living in poverty often face inadequate healthcare and nutrition. Limited access to medical services, nutritious food, and clean water can lead to higher rates of illness and lower life expectancy.</li>
+<li>Unemployment and Underemployment: Poverty is closely linked to unemployment and underemployment. Limited job opportunities, particularly those that offer fair wages and job security, can make it difficult for individuals and families to escape poverty.</li>
+<li>Housing Insecurity: Many people in poverty live in substandard and overcrowded housing conditions, lacking proper sanitation and basic amenities. This can contribute to health issues and overall well-being.</li>
+<li>Social Exclusion: Poverty can result in social exclusion and marginalization. Individuals in poverty may face discrimination, stigmatization, and limited social opportunities, which can impact their mental and emotional well-being.</li>
+<li>Food Insecurity: Poverty often leads to inadequate access to sufficient, safe, and nutritious food. This can result in malnutrition, affecting physical and cognitive development, particularly in children.</li>
+<li>Limited Access to Financial Resources: Individuals in poverty may lack access to banking and financial services, making it difficult for them to save, invest, or secure loans. This limits their ability to build assets and escape the cycle of poverty.</li>
+<li>Increased Vulnerability to Disasters: Those living in poverty are often more vulnerable to the impacts of natural disasters and economic shocks. Limited resources make it challenging for individuals and communities to recover from such events.</li>
+</b></ul></P>
+<b><p>WICKED PROBLEM STATEMENTS:</p>
+    <p>Certainly! Here are five challenging problem statements related to poverty alleviation that can be addressed using AI for good:
+<ul>
+   <li> Targeted Microfinance Allocation: Develop an AI-driven system that can accurately identify and recommend microfinance loans to individuals in underserved communities, taking into account their financial history, risk factors, and potential for income generation.</li> 
+    <li>Job Matching for Vulnerable Populations: Create an AI-powered platform that matches job seekers from marginalized backgrounds with suitable job opportunities by analyzing their skills, education, and location, while considering employers' requirements and socio-economic conditions.</li> 
+    <li>Predictive Healthcare for Poverty-Stricken Areas: Build a predictive healthcare model using AI that can anticipate disease outbreaks, healthcare resource needs, and potential health risks in low-income regions, enabling proactive intervention and resource allocation.</li> 
+    <li>Agricultural Productivity Enhancement: Develop AI-driven tools that provide small-scale farmers in impoverished regions with insights on optimal crop planting, irrigation schedules, and pest management, aiming to increase agricultural productivity and food security.</li> 
+   <li>Financial Literacy and Inclusion: Create an AI-driven virtual assistant or chatbot that offers personalized financial education and guidance to people with limited access to traditional banking services, helping them make informed financial decisions and access essential financial services.</li> 
+</ul>
+</p>
+</b>
+ </div>
+        <button>Start With A Little</button>
+    </div>
+
+    <section class="fullContainer" id="aboutSection">
+        <div class="container">
+            <h2 class="sectionTitle">About Us</h2>
+                <p>
+                    Welcome to Tech Rise, where we're dedicated to building hope and breaking barriers. At Tech Rise, we harness the power of artificial intelligence to make a positive impact, especially in the realm of poverty alleviation. Our mission is to create a better world by utilizing AI for the greater good. We believe in the transformative potential of technology to improve lives, drive innovation, and create opportunities for those in need. Join us on our journey to build a brighter, more inclusive future.
+                </p>
+            <div class="cards">
+                <div class="donationBox">
+                    <div class="title">Give Donation</div>
+                    <p>Your generous contributions help us make a difference in the lives of those in need. Every donation counts and brings positive change to our community</p>
+                    <button>
+                        Donate Now
+                    </button>
+                </div>
+                <div class="'volunteerBox">
+                    <div class="title">Become a volunteer</div>
+                    <p>Join our team of dedicated volunteers and make a positive impact on the community. Your time and efforts can help create a better world for those in need</p>
+                    <button>
+                        Volunteer now
+                    </button>
+                </div>
+                <div class="scholarshipBox">
+                    <div class="title">Give Scholarship</div>
+                    <p>Help empower the next generation by providing scholarships to deserving students. Your support can make a significant difference in their educational journey.</p>
+                    <button>
+                        Give Immediately
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="programs" id="programSection">
+        <div class="container">
+            <h2 class="sectionTitle">Programs</h2>
+            <div class="boxContainer">
+                <div class="box">
+               <div class="cardImage"></div>    
+               <div class="programTitle">Education to every child</div> 
+               <div class="donationCount">
+               </div>
+               <button  onclick="window.location.href='https://forms.gle/Kdjyofdq89ptc6My6'"> Contribute Now</button>
+                </div>
+
+                <div class="box">
+                    <div class="cardImage"></div>    
+                    <div class="programTitle">Make life easier for them</div> 
+                    <div class="donationCount">   
+                    </div>
+                    <button  onclick="window.location.href='https://forms.gle/Kdjyofdq89ptc6My6'"> Contribute Now</button>
+                     </div>
+                     <div class="box">
+                        <div class="cardImage"></div>    
+                        <div class="programTitle">Dedicating to helping kids</div> 
+                        <div class="donationCount">
+                        </div>
+                        <button  onclick="window.location.href='https://forms.gle/Kdjyofdq89ptc6My6'"> Contribute Now</button>
+                         </div>
+                         <div class="box">
+                            <div class="cardImage"></div>    
+                            <div class="programTitle">Provide Job opportunities</div> 
+                            <div class="donationCount">
+                            </div>
+                            <button  onclick="window.location.href='https://forms.gle/Kdjyofdq89ptc6My6'"> Contribute Now</button>
+                             </div>
+                  </div>
+
+        </div>
+    </section>
+    <section class="reference" id="referenceSection">
+        <div class="container">
+            <h2 class="sectionTitle">References</h2>
+            <div class="boxContainer">
+                 <div class="box">
+                    <div class="cardImage">
+                        <p>Artificial intelligence (AI) is a term attracting significant attention from both research as well as practice. AI is a constantly evolving frontier of emerging computing capabilities and technologies including but not limited to autonomous vehicles, natural language processing, robots, and virtual agents. The impact of AI has been examined in various business as well as non-business contexts, including the achievement of the sustainable development goals (SDGs) proposed by the United Nations. However, due to the mixed findings of various studies, the exact nature of AI on specific SDGs is not clear. We combine quantitative and qualitative reviews of the extant academic literature to examine the impact of AI on an important SDG – alleviation of poverty. This study has multiple potential contributions - we identify the key trends in the extant research in this domain and also open up the black box of intermediate mechanisms through which AI affects poverty alleviation.</p>
+                    </div>    
+                    <div class="programTitle" onclick="window.location.href='https://acis.aaisnet.org/wp-content/uploads/2022/11/ACIS_2022_paper_151.pdf'">Artificial Intelligence and Poverty Alleviation</div> 
+                </div>
+
+                <div class="box">
+                    <div class="cardImage">
+                        <p>Artificial Intelligence (AI) could help humanity achieve the ambitious goal of eradicating extreme poverty. The United Nations (UN) General Assembly, in its declaration Transforming Our World: The 2030 Agenda for Sustainable Development, boldly proclaimed the aspirations of the nations of the world to “end poverty in all its forms everywhere.” No Poverty is the first of the 17 UN Sustainable Development Goals (SDGs). However, humanity is not on track to accomplish this ambitious goal; the COVID-19 pandemic has increased joblessness and economic disruption pushing additional millions into extreme poverty and rolling back the gains in poverty alleviation over the past three decades. This paper briefly explores the theoretics of poverty, recent trends in management education, and emerging innovations in AI. It provides some examples of AI implementation in the agriculture sector and draws inferences from these diverse but coalescing transformations in AI, management education, and sustainable development.</p>
+                    </div>    
+                    <div class="programTitle" onclick="window.location.href='https://www.sciencedirect.com/science/article/pii/S1472811722000647'">Intelligence and poverty alleviation: Emerging innovations and their implications for management education and sustainable development</div> 
+                </div>
+
+                <div class="box">
+                    <div class="cardImage">
+                        <p>The first task for eradicating poverty is accurate poverty identification. Deep poverty identification is conducive to investing resources to help deeply poor populations achieve prosperity, one of the most challenging tasks in poverty eradication. This study constructs a deep poverty identification model utilizing explainable artificial intelligence (XAI) to identify deeply poor households based on the data of 23,307 poor households in rural areas in China. For comparison, a logistic regression-based model and an income-based model are developed as well. We found that our XAI-based model achieves a higher identification performance in terms of the area under the ROC curve than both the logistic regression-based model and the income-based model. For each rural household, the odds of being identified as deeply poor are obtained.Important characteristics that can be used to identify deeply poor households include household income, disability, village attributes, lack of funds, labor force, disease, and household members.</p>
+                    </div>
+                    <div class="programTitle" onclick="window.location.href='https://www.mdpi.com/2071-1050/14/16/9872'">Using Explainable Artificial Intelligence to Identify Key Characteristics of Deep Poverty for Each Household</div> 
+                </div>  
+                <ul> 
+                <li> <a href="https://data.gov.in/catalog/below-poverty-line-india?page=1">data.gov.in</a></li>
+            </ul>     
+            </div>
+        </div>
+    </section>
+    <section class="gallery" id="gallerySection">
+        <div class="container">
+            <div class="sectionTitle">Gallery</div>
+            <div class="galleryContainer">
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src=# alt="image" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <div class="item">
+                    <span class="title"> Image Title </span>
+                    <img src="#" alt="" />
+                </div>
+                <!-- .item -->
+            </div>
+        </div>
+    </section>
+
+    <section class="join" id="joinSection">
+        <div class="container">
+            <div class="joinTitle">
+                Contribute to <span>TechRise</span>
+            </div>
+            <p>              
+"Empowering hope through innovation, Techrise aspires to harness the transformative power of AI for good, lifting the shadows of poverty to create a brighter, equitable future for all."
+            </p>
+            <button class="joinNow" onclick="window.location.href='https://forms.gle/Kdjyofdq89ptc6My6'">JOIN US</button>         
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="newsLetterContainer">
+
+                <div class="linksContainer">
+                    <div class="title">Useful links</div>
+                    <ul>
+                        <li><a href="#homeSection">Home</a></li>
+                        <li><a href="#aboutSection">About</a></li>
+                        <li><a href="#programSection">Programs</a></li>
+                        <li><a href="#referenceSection">References</a></li>
+                        <li><a href="#gallerysection">Gallery</a></li>
+                        <li><a href="#joinSection">Join</a></li>
+                    </ul>
+                </div>
+                <div class="connectContainer">
+                    <div class="title">connect with us</div>
+                    <p>
+                        RV Vidyaniketan, Mailasandra, Bengaluru<br>
+                        560059, Karnataka
+                    </p>
+                    <p>
+                        <a href="mailto:techrisehope@gmail.com">techrisehope@gmail.com</a>
+                    </p>
+                    <p>(+91) 7483232123</p>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
